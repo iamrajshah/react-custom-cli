@@ -1,0 +1,54 @@
+/**
+ *
+ * {{properCase name }}
+ *
+ */
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { compose } from 'redux';
+
+{{#if wantActionsAndReducer}}
+import injectReducer from '../utils/injectReducer';
+import reducer from '../reducers/{{properCase name}}.reducer';
+{{/if}}
+
+/* eslint-disable react/prefer-stateless-function */
+export class {{ properCase name }} extends {{{ type }}} {
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+}
+
+{{ properCase name }}.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+  };
+}
+
+{{#if wantActionsAndReducer}}
+const withConnect = connect(
+  mapDispatchToProps
+);
+
+const withReducer = injectReducer({ key: '{{ camelCase name }}', reducer });
+{{else}}
+const withConnect = connect(null, mapDispatchToProps);
+{{/if}}
+export default compose(
+{{#if wantActionsAndReducer}}
+  withReducer,
+{{/if}}
+  withConnect
+)({{ properCase name }});
