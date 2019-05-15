@@ -49,7 +49,7 @@ This will start the utility to create the component/container for the applicatio
 Follow the step-by-step process to get the respective element in your project.
 
 ### _Steps to follow:_
-1. `git clone https://github.com/iamrajshah/react-custom-cli.gitClone this repository`
+1. `git clone https://github.com/iamrajshah/react-custom-cli`
 2. `cd react-custom-cli`
 2. `npm install`
 3. `npm run generate`
