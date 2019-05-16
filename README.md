@@ -53,3 +53,7 @@ Follow the step-by-step process to get the respective element in your project.
 2. `cd react-custom-cli`
 2. `npm install`
 3. `npm run generate`
+
+### To run test cases:
+
+`npm run test`
